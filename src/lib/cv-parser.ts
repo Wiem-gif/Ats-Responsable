@@ -1,4 +1,4 @@
-import pdf from "pdf-parse";
+import { extractText, getDocumentProxy } from "unpdf";
 import crypto from "crypto";
 
 const MIN_TEXT_LENGTH = 50; // en dessous, on considère le PDF comme "sans texte exploitable"
@@ -10,21 +10,20 @@ export type CvParseResult = {
 };
 
 /**
- * Tente d'extraire le texte d'un CV PDF.
+ * Tente d'extraire le texte d'un CV PDF via unpdf (moteur PDF moderne,
+ * activement maintenu — contrairement à pdf-parse qui embarque une version
+ * de pdf.js datant de 2017 et échoue sur des PDF pourtant valides).
  * Étape 1 : extraction directe du texte du PDF (rapide, gratuit).
- * Étape 2 (si échec / texte trop court) : OCR — à brancher avec le service
- * de ton choix (Tesseract.js en local, ou une API OCR managée).
- *
- * Ce fichier isole volontairement le fallback OCR dans sa propre fonction
- * pour pouvoir le tester et le remplacer facilement.
+ * Étape 2 (si échec / texte trop court) : OCR via OCR.space.
  */
 export async function parseCvText(buffer: Buffer): Promise<CvParseResult> {
   try {
-    const parsed = await pdf(buffer);
-    const text = (parsed.text ?? "").trim();
+    const pdf = await getDocumentProxy(new Uint8Array(buffer));
+    const { text } = await extractText(pdf, { mergePages: true });
+    const cleanedText = (text ?? "").trim();
 
-    if (text.length >= MIN_TEXT_LENGTH) {
-      return { text, status: "SUCCESS", method: "pdf-text" };
+    if (cleanedText.length >= MIN_TEXT_LENGTH) {
+      return { text: cleanedText, status: "SUCCESS", method: "pdf-text" };
     }
 
     // Texte insuffisant → probablement un CV scanné (image). On tente l'OCR.
@@ -36,14 +35,20 @@ export async function parseCvText(buffer: Buffer): Promise<CvParseResult> {
     return { text: "", status: "FAILED", method: "none" };
   } catch (error) {
     console.error("Erreur lors du parsing du CV :", error);
+
+    // Le PDF n'a pas pu être lu du tout (fichier corrompu, protégé...) :
+    // on tente quand même l'OCR en dernier recours avant d'abandonner.
+    const ocrText = await runOcrFallback(buffer);
+    if (ocrText && ocrText.trim().length >= MIN_TEXT_LENGTH) {
+      return { text: ocrText.trim(), status: "SUCCESS", method: "ocr" };
+    }
+
     return { text: "", status: "FAILED", method: "none" };
   }
 }
 
 /**
- * Fallback OCR. Implémentation à compléter (ex: Tesseract.js, ou une API
- * OCR cloud). Renvoie une chaîne vide si non implémenté, ce qui déclenche
- * proprement le statut FAILED côté appelant — jamais de crash silencieux.
+ * Fallback OCR via l'API cloud OCR.space (gratuite, sans dépendance système).
  */
 async function runOcrFallback(buffer: Buffer): Promise<string> {
   const apiKey = process.env.OCR_SPACE_API_KEY;
@@ -57,12 +62,13 @@ async function runOcrFallback(buffer: Buffer): Promise<string> {
     formData.append("apikey", apiKey);
     formData.append("language", "fre");
     formData.append("isOverlayRequired", "false");
-    formData.append("OCREngine", "2"); // moteur plus précis, meilleur sur les CV
+    formData.append("OCREngine", "2");
     formData.append(
       "file",
       new Blob([new Uint8Array(buffer)], { type: "application/pdf" }),
-     "cv.pdf"
+      "cv.pdf"
     );
+
     const response = await fetch("https://api.ocr.space/parse/image", {
       method: "POST",
       body: formData,
@@ -88,8 +94,6 @@ async function runOcrFallback(buffer: Buffer): Promise<string> {
 
 /**
  * Hash de dédoublonnage : basé sur email + nom normalisés.
- * Volontairement simple (pas de fuzzy matching) pour rester prévisible
- * et explicable — cohérent avec l'exigence "pas de décision automatique".
  */
 export function computeDedupeHash(fullName: string, email: string): string {
   const normalized = `${fullName.trim().toLowerCase()}|${email.trim().toLowerCase()}`;
