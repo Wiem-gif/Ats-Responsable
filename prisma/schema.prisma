@@ -1,0 +1,231 @@
+// Schéma de la base de données — ATS Responsable
+// Chaque choix ici reflète une exigence du sujet :
+// - Aucun champ de "score" ou "note globale" nulle part (exigence de responsabilité)
+// - Extraction toujours liée à une source (traçabilité)
+// - AuditLog systématique sur les actions sensibles
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  RECRUITER
+  ADMIN
+}
+
+enum ApplicationStage {
+  RECEIVED
+  SCREENING
+  INTERVIEW_SCHEDULED
+  INTERVIEW_DONE
+  DECIDED
+}
+
+enum ExtractionStatus {
+  PENDING
+  SUCCESS
+  FAILED // CV sans texte exploitable, même après OCR
+}
+
+enum CriterionStatus {
+  FOUND
+  NOT_FOUND
+  UNCERTAIN
+}
+
+enum InterviewStatus {
+  INVITED
+  ACCEPTED
+  DECLINED
+  COMPLETED
+}
+
+enum EmailDraftType {
+  INVITATION
+  REMINDER
+  FOLLOW_UP
+  DELETION_CONFIRMATION
+}
+
+enum EmailDraftStatus {
+  PENDING_REVIEW
+  APPROVED
+  SENT
+  DISCARDED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  role      Role     @default(RECRUITER)
+  createdAt DateTime @default(now())
+
+  ownedApplications Application[] @relation("ApplicationOwner")
+  auditLogs         AuditLog[]
+}
+
+model Job {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  status      String   @default("open") // open | closed
+  createdAt   DateTime @default(now())
+
+  criteria     Criterion[]
+  applications Application[]
+}
+
+model Criterion {
+  id    String @id @default(cuid())
+  jobId String
+  job   Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  label String // ex: "React", "3 ans d'expérience backend"
+
+  matches CriteriaMatch[]
+}
+
+model Candidate {
+  id          String   @id @default(cuid())
+  fullName    String
+  email       String
+  phone       String?
+  cvUrl       String
+  portfolioUrl String?
+
+  consentGiven Boolean  @default(false)
+  consentDate  DateTime?
+
+  // Hash de dédoublonnage : sha256(email normalisé + nom normalisé)
+  dedupeHash String
+
+  deletionRequested   Boolean   @default(false)
+  deletionRequestedAt DateTime?
+  anonymized          Boolean   @default(false)
+
+  createdAt DateTime @default(now())
+
+  applications Application[]
+
+  @@index([dedupeHash])
+}
+
+model Application {
+  id             String            @id @default(cuid())
+  candidateId    String
+  candidate      Candidate         @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  jobId          String
+  job            Job               @relation(fields: [jobId], references: [id])
+  stage          ApplicationStage  @default(RECEIVED)
+  ownerId        String?
+  owner          User?             @relation("ApplicationOwner", fields: [ownerId], references: [id])
+
+  // Raison structurée d'une décision humaine — jamais un score, toujours du texte libre
+  decisionReason String?
+
+  nameHidden  Boolean @default(false) // masquage optionnel nom/photo
+  photoHidden Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  extractionStatus ExtractionStatus @default(PENDING)
+
+  extractions        Extraction[]
+  criteriaMatches    CriteriaMatch[]
+  suggestedQuestions SuggestedQuestion[]
+  interviews         Interview[]
+  emailDrafts        EmailDraft[]
+
+  @@index([stage])
+}
+
+// Un champ extrait du CV par l'IA, avec sa preuve
+model Extraction {
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  fieldName String // ex: "years_experience", "skills", "last_position"
+  value     String // valeur brute renvoyée par le LLM (peut être du JSON stringifié pour les listes)
+  sourceQuote String? // citation exacte du CV utilisée pour retrouver la position dans le texte
+
+  correctedByRecruiter Boolean  @default(false)
+  correctedValue       String?
+  correctedAt          DateTime?
+  correctedByUserId    String?
+
+  createdAt DateTime @default(now())
+}
+
+// Rapprochement entre un critère du poste et le CV du candidat
+model CriteriaMatch {
+  id            String          @id @default(cuid())
+  applicationId String
+  application   Application     @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  criterionId   String
+  criterion     Criterion       @relation(fields: [criterionId], references: [id])
+
+  status       CriterionStatus
+  evidenceQuote String? // citation du CV si status = FOUND
+
+  createdAt DateTime @default(now())
+}
+
+model SuggestedQuestion {
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  questionText String
+  basedOn      String? // court texte expliquant sur quoi la question s'appuie (critère non trouvé, point fort, etc.)
+
+  createdAt DateTime @default(now())
+}
+
+model Interview {
+  id            String          @id @default(cuid())
+  applicationId String
+  application   Application     @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  slotDatetime    DateTime
+  participants    String[] // emails
+  status          InterviewStatus @default(INVITED)
+  calendarEventId String?
+
+  feedbackText        String?
+  feedbackSubmittedAt DateTime?
+
+  createdAt DateTime @default(now())
+}
+
+// Aucun email n'est envoyé automatiquement : tout passe par un brouillon validé
+model EmailDraft {
+  id            String           @id @default(cuid())
+  applicationId String
+  application   Application      @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  type       EmailDraftType
+  draftText  String
+  status     EmailDraftStatus  @default(PENDING_REVIEW)
+  reviewedBy String?
+  sentAt     DateTime?
+
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id])
+  action     String   // ex: "extraction.corrected", "candidate.deletion_requested", "email.sent"
+  targetType String   // ex: "Application", "Candidate"
+  targetId   String
+  metadata   Json?
+  timestamp  DateTime @default(now())
+}
