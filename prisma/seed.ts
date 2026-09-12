@@ -1,22 +1,38 @@
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 import { computeDedupeHash } from "../src/lib/cv-parser";
 
 const prisma = new PrismaClient();
 
-/**
- * Jeu de données de démonstration.
- * Volontairement varié pour illustrer les cas limites du sujet :
- * - un candidat avec extraction complète
- * - un candidat avec critère non trouvé
- * - un candidat en doublon potentiel
- * - un candidat avec échec d'extraction (CV "sans texte")
- */
 async function main() {
   console.log("Seed : création du jeu de données de démo...");
 
-  const recruiter = await prisma.user.create({
-    data: { name: "Sami Recruteur", email: "sami@example.com", role: "RECRUITER" },
+  const adminPasswordHash = await bcrypt.hash("admin123", 10);
+  const recruiterPasswordHash = await bcrypt.hash("recruteur123", 10);
+
+  const admin = await prisma.user.upsert({
+    where: { email: "admin@example.com" },
+    update: {},
+    create: {
+      name: "Admin Démo",
+      email: "admin@example.com",
+      passwordHash: adminPasswordHash,
+      role: "ADMIN",
+    },
   });
+
+  const recruiter = await prisma.user.upsert({
+    where: { email: "recruteur@example.com" },
+    update: {},
+    create: {
+      name: "Sami Recruteur",
+      email: "recruteur@example.com",
+      passwordHash: recruiterPasswordHash,
+      role: "RECRUITER",
+    },
+  });
+
+  console.log("Comptes créés : admin@example.com / admin123, recruteur@example.com / recruteur123");
 
   const job = await prisma.job.create({
     data: {

@@ -14,6 +14,17 @@ const FIELD_LABELS: Record<string, string> = {
   languages: "Langue",
 };
 
+// Champs dont la valeur est une liste séparée par virgules — affichés en
+// pastilles plutôt qu'en texte brut.
+const LIST_FIELDS = ["skills", "languages"];
+
+function splitList(value: string) {
+  return value
+    .split(/[,;/]/)
+    .map((v) => v.trim())
+    .filter(Boolean);
+}
+
 export default function ExtractionField({
   id,
   fieldName,
@@ -57,54 +68,69 @@ export default function ExtractionField({
 
   if (!value && !sourceQuote) return null;
 
+  const isList = LIST_FIELDS.includes(fieldName);
+  const listItems = isList && currentValue ? splitList(currentValue) : [];
+
   return (
-    <div className="group rounded-lg border border-slate-200 bg-white p-3">
+    <div className="group rounded-lg border border-[#E4E2DD] p-3.5">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
-          <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+          <p className="text-[0.7rem] font-medium uppercase tracking-wide text-[#8A8F98]">
             {FIELD_LABELS[fieldName] ?? fieldName}
             {saved && (
-              <span className="ml-2 rounded-full bg-blue-50 px-1.5 py-0.5 text-[10px] font-normal normal-case text-blue-600">
+              <span className="ml-2 rounded-full bg-[#EDF2EE] px-1.5 py-0.5 text-[10px] font-normal normal-case text-[#2F5D50]">
                 corrigé par le recruteur
               </span>
             )}
           </p>
 
           {editing ? (
-            <div className="mt-1 flex items-center gap-1.5">
+            <div className="mt-1.5 flex items-center gap-1.5">
               <input
                 value={draft}
                 onChange={(e) => setDraft(e.target.value)}
-                className="flex-1 rounded border border-accent-300 px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-accent-500"
+                placeholder={isList ? "Séparez les éléments par une virgule" : undefined}
+                className="flex-1 rounded-md border border-[#E4E2DD] px-2.5 py-1.5 text-sm text-[#14181F] focus:border-[#2F5D50] focus:outline-none focus:ring-2 focus:ring-[#2F5D50]/15"
                 autoFocus
               />
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="rounded p-1 text-green-600 hover:bg-green-50"
+                className="rounded-md p-1.5 text-[#2F5D50] hover:bg-[#EDF2EE]"
                 aria-label="Valider la correction"
               >
-                <Check size={16} />
+                <Check size={16} strokeWidth={2} />
               </button>
               <button
                 onClick={() => {
                   setEditing(false);
                   setDraft(currentValue);
                 }}
-                className="rounded p-1 text-slate-400 hover:bg-slate-100"
+                className="rounded-md p-1.5 text-[#B7BAC0] hover:bg-[#F2F1EC] hover:text-[#6B7178]"
                 aria-label="Annuler"
               >
-                <X size={16} />
+                <X size={16} strokeWidth={2} />
               </button>
             </div>
+          ) : isList && listItems.length > 0 ? (
+            <div className="mt-1.5 flex flex-wrap gap-1.5">
+              {listItems.map((item, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center rounded-full border border-[#E4E2DD] bg-[#FBFAF8] px-2.5 py-1 text-xs font-medium text-[#14181F]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           ) : (
-            <p className="mt-0.5 text-sm text-slate-800">{currentValue || "—"}</p>
+            <p className="mt-0.5 text-sm text-[#14181F]">{currentValue || "—"}</p>
           )}
 
           {sourceQuote && (
-            <p className="mt-1.5 flex items-start gap-1 text-xs italic text-slate-400">
-              <Quote size={12} className="mt-0.5 shrink-0" />
-              &laquo;&nbsp;{sourceQuote}&nbsp;&raquo;
+            <p className="mt-2 flex items-start gap-1 text-xs italic leading-relaxed text-[#8A8F98]">
+              <Quote size={12} strokeWidth={1.75} className="mt-0.5 shrink-0" />
+              « {sourceQuote} »
             </p>
           )}
         </div>
@@ -112,10 +138,10 @@ export default function ExtractionField({
         {!editing && (
           <button
             onClick={() => setEditing(true)}
-            className="shrink-0 rounded p-1 text-slate-300 opacity-0 hover:bg-slate-100 hover:text-slate-600 group-hover:opacity-100"
+            className="shrink-0 rounded-md p-1 text-[#D8D6D0] opacity-0 transition-colors hover:bg-[#F2F1EC] hover:text-[#6B7178] group-hover:opacity-100"
             aria-label="Corriger cette extraction"
           >
-            <Pencil size={14} />
+            <Pencil size={14} strokeWidth={1.75} />
           </button>
         )}
       </div>

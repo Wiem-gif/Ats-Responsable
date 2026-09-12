@@ -76,28 +76,26 @@ export default function CvUploadForm({ jobId }: { jobId: string }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-slate-200 bg-white p-5">
-      <h3 className="text-sm font-medium text-slate-700">Ajouter une candidature</h3>
-
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-3">
         <input
           type="text"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           placeholder="Nom complet"
-          className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+          className="rounded-lg border border-[#E4E2DD] px-3 py-2 text-sm text-[#14181F] placeholder:text-[#B7BAC0] focus:border-[#2F5D50] focus:outline-none focus:ring-2 focus:ring-[#2F5D50]/15"
         />
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+          className="rounded-lg border border-[#E4E2DD] px-3 py-2 text-sm text-[#14181F] placeholder:text-[#B7BAC0] focus:border-[#2F5D50] focus:outline-none focus:ring-2 focus:ring-[#2F5D50]/15"
         />
       </div>
 
-      <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-slate-300 px-3 py-6 text-sm text-slate-500 hover:border-accent-400 hover:text-accent-600">
-        <UploadCloud size={18} />
+      <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-[#E4E2DD] px-3 py-6 text-sm text-[#8A8F98] transition-colors hover:border-[#2F5D50] hover:text-[#2F5D50]">
+        <UploadCloud size={18} strokeWidth={1.75} />
         {file ? file.name : "Choisir un fichier CV (PDF)"}
         <input
           type="file"
@@ -107,12 +105,12 @@ export default function CvUploadForm({ jobId }: { jobId: string }) {
         />
       </label>
 
-      <label className="flex items-start gap-2 text-xs text-slate-500">
+      <label className="flex items-start gap-2 text-xs leading-relaxed text-[#8A8F98]">
         <input
           type="checkbox"
           checked={consentGiven}
           onChange={(e) => setConsentGiven(e.target.checked)}
-          className="mt-0.5"
+          className="mt-0.5 accent-[#2F5D50]"
         />
         Le candidat a été informé et a donné son consentement au traitement de ses
         données pour ce recrutement.
@@ -122,10 +120,10 @@ export default function CvUploadForm({ jobId }: { jobId: string }) {
         <p
           className={
             message.type === "error"
-              ? "rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600"
+              ? "rounded-lg border border-[#E4B5A8] bg-[#FBF0ED] px-3 py-2 text-sm text-[#9A3B2A]"
               : message.type === "warning"
-              ? "rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-700"
-              : "rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700"
+              ? "rounded-lg border border-[#E3D3A0] bg-[#FBF6E7] px-3 py-2 text-sm text-[#8A6D1B]"
+              : "rounded-lg border border-[#BFD8C9] bg-[#EDF2EE] px-3 py-2 text-sm text-[#2F5D50]"
           }
         >
           {message.text}
@@ -135,7 +133,7 @@ export default function CvUploadForm({ jobId }: { jobId: string }) {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full rounded-lg bg-accent-600 px-4 py-2 text-sm font-medium text-white hover:bg-accent-700 disabled:opacity-50"
+        className="w-full rounded-lg bg-[#2F5D50] px-4 py-2.5 text-sm font-medium text-[#EDF2EE] transition-colors hover:bg-[#274E43] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F5D50] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {submitting ? "Envoi en cours..." : "Envoyer le CV"}
       </button>

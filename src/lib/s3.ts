@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 export const s3 = new S3Client({
@@ -7,9 +7,12 @@ export const s3 = new S3Client({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
   },
-   ...(process.env.AWS_ENDPOINT && {
+  // Permet de pointer vers un service compatible S3 (ex: Supabase Storage)
+  // plutôt que vers AWS directement. Laisser AWS_ENDPOINT vide pour utiliser
+  // le vrai AWS S3 sans rien changer d'autre.
+  ...(process.env.AWS_ENDPOINT && {
     endpoint: process.env.AWS_ENDPOINT,
-    forcePathStyle: true, 
+    forcePathStyle: true, // requis par la plupart des services S3-compatibles
   }),
 });
 
@@ -43,4 +46,14 @@ export async function uploadCvToS3(params: {
 export async function getSignedCvUrl(key: string, expiresInSeconds = 900): Promise<string> {
   const command = new GetObjectCommand({ Bucket: BUCKET, Key: key });
   return getSignedUrl(s3, command, { expiresIn: expiresInSeconds });
+}
+
+/**
+ * Supprime définitivement un fichier CV du bucket — utilisé lors d'une
+ * demande de suppression RGPD, pour ne pas se contenter de retirer la
+ * référence en base tout en laissant le fichier accessible côté stockage.
+ */
+export async function deleteCvFromS3(key: string): Promise<void> {
+  if (!key) return;
+  await s3.send(new DeleteObjectCommand({ Bucket: BUCKET, Key: key }));
 }

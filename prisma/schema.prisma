@@ -60,11 +60,12 @@ enum EmailDraftStatus {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  name      String
-  email     String   @unique
-  role      Role     @default(RECRUITER)
-  createdAt DateTime @default(now())
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(RECRUITER)
+  createdAt    DateTime @default(now())
 
   ownedApplications Application[] @relation("ApplicationOwner")
   auditLogs         AuditLog[]

@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getSessionFromRequest } from "@/lib/auth";
 
+/**
+ * POST /api/jobs
+ * Crée un poste avec sa liste de critères.
+ * Réservé aux Admins : la création de poste engage l'organisation,
+ * un recruteur peut ensuite y traiter des candidatures librement.
+ */
 export async function POST(req: NextRequest) {
+  const session = await getSessionFromRequest(req);
+  if (!session || session.role !== "ADMIN") {
+    return NextResponse.json({ error: "Réservé aux administrateurs." }, { status: 403 });
+  }
+
   try {
     const { title, description, criteria } = (await req.json()) as {
       title: string;
