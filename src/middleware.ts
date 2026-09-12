@@ -8,7 +8,8 @@ import { getSessionFromRequest } from "@/lib/auth";
 //   (ex: accepter/refuser un entretien depuis un lien reçu par email),
 //   qui n'ont pas de compte et ne doivent pas en avoir besoin.
 const PUBLIC_PATHS = ["/login", "/api/auth/login"];
-const PUBLIC_PREFIXES = ["/public", "/_next", "/favicon", "/api/cron"];
+const PUBLIC_PREFIXES = ["/public", "/api/public", "/_next", "/favicon", "/api/cron"];
+
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 

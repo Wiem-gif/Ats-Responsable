@@ -11,8 +11,9 @@ import { runIngestionPipeline } from "@/lib/ingestion-pipeline";
  * 2. Vérification doublon
  * 3. Extraction du texte (+ fallback OCR)
  * 4. Création des enregistrements en base
- * 5. Extraction IA (appelée directement ici pour le debug ;
- *    passera en arrière-plan une fois validée)
+ * 5. Notification n8n (webhook) pour la suite du pipeline IA
+ *
+ 
  */
 export async function POST(req: NextRequest) {
   try {
@@ -21,6 +22,7 @@ export async function POST(req: NextRequest) {
     const fullName = formData.get("fullName") as string | null;
     const email = formData.get("email") as string | null;
     const jobId = formData.get("jobId") as string | null;
+    const portfolioUrl = (formData.get("portfolioUrl") as string | null) || null;
     const consentGiven = formData.get("consentGiven") === "true";
 
     if (!file || !fullName || !email || !jobId) {
@@ -42,6 +44,8 @@ export async function POST(req: NextRequest) {
     const existing = await prisma.candidate.findFirst({ where: { dedupeHash } });
 
     if (existing) {
+      // On ne fusionne jamais automatiquement : on notifie et on laisse
+      // la décision au recruteur (voir AuditLog + notif dans une V2).
       await prisma.auditLog.create({
         data: {
           action: "candidate.duplicate_detected",
@@ -70,6 +74,7 @@ export async function POST(req: NextRequest) {
         fullName,
         email,
         cvUrl: key,
+        portfolioUrl,
         dedupeHash,
         consentGiven: true,
         consentDate: new Date(),
@@ -109,19 +114,23 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // --- 5. Extraction IA (synchrone pour le moment, le temps du debug) -----
-    try {
-      await runIngestionPipeline(application.id, parseResult.text);
-    } catch (err) {
-      console.error("Erreur pipeline d'extraction IA :", err);
-      return NextResponse.json(
-        {
-          error:
-            "Erreur lors de l'extraction IA : " +
-            (err instanceof Error ? err.message : String(err)),
-        },
-        { status: 500 }
-      );
+    // --- 5. Déclenchement du pipeline IA --------------------------------------
+    // En développement, on lance l'extraction directement pour pouvoir tester
+    // sans dépendre de n8n. En production, tu peux la remplacer entièrement
+    // par l'appel webhook ci-dessous si tu préfères tout faire passer par n8n.
+    runIngestionPipeline(application.id, parseResult.text).catch((err) =>
+      console.error("Erreur pipeline d'extraction IA (non bloquant) :", err)
+    );
+
+    if (process.env.N8N_INGESTION_WEBHOOK_URL) {
+      await fetch(process.env.N8N_INGESTION_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          applicationId: application.id,
+          cvText: parseResult.text,
+        }),
+      }).catch((err) => console.error("Erreur webhook n8n (non bloquant) :", err));
     }
 
     return NextResponse.json({ applicationId: application.id, status: "received" });

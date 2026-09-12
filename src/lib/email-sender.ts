@@ -5,6 +5,7 @@ const SUBJECT_BY_TYPE: Record<string, string> = {
   REMINDER: "Rappel : entretien demain",
   FOLLOW_UP: "Suite à votre candidature",
   DELETION_CONFIRMATION: "Confirmation de suppression de vos données",
+  INTERNAL_NOTIFICATION: "[ATS] Notification",
 };
 
 const transporter = nodemailer.createTransport({
@@ -16,11 +17,6 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function sendEmail(params: { to: string; type: string; text: string }) {
-  console.log("--- Tentative d'envoi email ---");
-  console.log("GMAIL_USER défini :", Boolean(process.env.GMAIL_USER), process.env.GMAIL_USER);
-  console.log("GMAIL_APP_PASSWORD défini :", Boolean(process.env.GMAIL_APP_PASSWORD));
-  console.log("Destinataire :", params.to);
-
   if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
     console.warn("GMAIL_USER / GMAIL_APP_PASSWORD non configurés : envoi ignoré (mode simulation).");
     return { simulated: true };
@@ -39,13 +35,9 @@ export async function sendEmail(params: { to: string; type: string; text: string
       text: params.text,
     });
 
-    console.log("Résultat envoi : messageId =", result.messageId);
-    console.log("Accepted :", result.accepted);
-    console.log("Rejected :", result.rejected);
-
     return result;
   } catch (err) {
-    console.error("ERREUR nodemailer complète :", err);
+    console.error("ERREUR nodemailer :", err);
     throw err;
   }
 }

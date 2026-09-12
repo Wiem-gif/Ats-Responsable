@@ -48,11 +48,14 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       }),
     });
 
+    const declineLink = `${process.env.NEXT_PUBLIC_APP_URL}/public/interviews/${interview.id}/decline`;
+    const draftTextWithDecline = `${draftText}\n\nSi ce créneau ne vous convient pas, vous pouvez le décliner ici : ${declineLink}`;
+
     const emailDraft = await prisma.emailDraft.create({
       data: {
         applicationId: application.id,
         type: "INVITATION",
-        draftText,
+        draftText: draftTextWithDecline,
         status: "PENDING_REVIEW",
       },
     });
