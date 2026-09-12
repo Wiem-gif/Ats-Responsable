@@ -1,0 +1,2239 @@
+{
+  "exportedAt": "2026-09-12T21:04:43.094Z",
+  "users": [
+    {
+      "id": "cmtyc7viv00008n56fj4ak37f",
+      "name": "Admin Démo",
+      "email": "admin@example.com",
+      "role": "ADMIN",
+      "createdAt": "2026-09-12T12:04:30.677Z"
+    },
+    {
+      "id": "cmtyc7w2000018n56bt3hjcyc",
+      "name": "Sami Recruteur",
+      "email": "recruteur@example.com",
+      "role": "RECRUITER",
+      "createdAt": "2026-09-12T12:04:31.368Z"
+    },
+    {
+      "id": "cmtylpgo8001ctz17wao6lzrr",
+      "name": "Sana",
+      "email": "sana@gmail.com",
+      "role": "RECRUITER",
+      "createdAt": "2026-09-12T16:30:07.714Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "cmtyc7wch00028n563m5nxnab",
+      "title": "Développeur Fullstack IA / Automation",
+      "description": "Poste orienté Next.js, automatisation de workflows et intégration IA.",
+      "status": "open",
+      "createdAt": "2026-09-12T12:04:31.746Z",
+      "criteria": [
+        {
+          "id": "cmtyc7wck00038n56bkjp8wsz",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "label": "React / Next.js"
+        },
+        {
+          "id": "cmtyc7wck00048n56x4r9xsqo",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "label": "Node.js"
+        },
+        {
+          "id": "cmtyc7wck00058n56im84fqt4",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "label": "3 ans d'expérience minimum"
+        },
+        {
+          "id": "cmtyc7wck00068n56ufjr81pp",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "label": "Expérience avec des LLM / IA générative"
+        }
+      ],
+      "applications": [
+        {
+          "id": "cmtyc7x3h00098n561qtqufod",
+          "candidateId": "cmtyc7wyx00078n56832zcyv7",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "stage": "RECEIVED",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T12:04:32.715Z",
+          "updatedAt": "2026-09-12T12:04:32.715Z",
+          "extractionStatus": "PENDING",
+          "candidate": {
+            "id": "cmtyc7wyx00078n56832zcyv7",
+            "fullName": "Aïcha Ben Salah",
+            "email": "aicha.bensalah@example.com",
+            "phone": null,
+            "cvUrl": "cvs/demo-c5521edfcf59ae056969c8d329fcbf900bf5cf8a536b875a66f71f95a43c6c15.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T12:04:32.548Z",
+            "dedupeHash": "c5521edfcf59ae056969c8d329fcbf900bf5cf8a536b875a66f71f95a43c6c15",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T12:04:32.554Z"
+          },
+          "extractions": [],
+          "criteriaMatches": [],
+          "suggestedQuestions": [],
+          "interviews": [],
+          "emailDrafts": [
+            {
+              "id": "cmtymjevm0001xn0jonpjg4zb",
+              "applicationId": "cmtyc7x3h00098n561qtqufod",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Aïcha,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis notre dernier échange concernant le poste de Développeur Fullstack IA / Automation. Nous voulions simplement vérifier si le processus de recrutement vous intéresse toujours et si vous avez besoin d’informations complémentaires.\n\nN’hésitez pas à nous faire savoir si vous souhaitez poursuivre ou si vous avez des questions. Nous restons à votre disposition.\n\nBien cordialement,\n\nL'équipe recrutement",
+              "status": "DISCARDED",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T16:53:25.131Z"
+            },
+            {
+              "id": "cmtymyrl20001wp4rpdvs2ud9",
+              "applicationId": "cmtyc7x3h00098n561qtqufod",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Aïcha,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis votre dernier échange avec nous il y a cinq jours, et nous voulions simplement vérifier si le processus de recrutement pour le poste de Développeur Fullstack IA / Automation vous intéresse toujours.\n\nN’hésitez pas à nous faire savoir si vous avez besoin de plus d’informations ou si vous souhaitez poursuivre la discussion. Nous restons à votre disposition pour toute question.\n\nAu plaisir de vous lire,\n\nL'équipe recrutement",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T17:05:21.446Z"
+            }
+          ]
+        },
+        {
+          "id": "cmtyc7xaj000c8n566pezaqru",
+          "candidateId": "cmtyc7x7u000a8n56bbbo5qse",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "stage": "RECEIVED",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T12:04:32.971Z",
+          "updatedAt": "2026-09-12T12:04:32.971Z",
+          "extractionStatus": "PENDING",
+          "candidate": {
+            "id": "cmtyc7x7u000a8n56bbbo5qse",
+            "fullName": "Karim Trabelsi",
+            "email": "karim.trabelsi@example.com",
+            "phone": null,
+            "cvUrl": "cvs/demo-acf7bec6300b6a67ef50d97e3430b39b812bfd60e18f72e8ee8b28448766209e.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T12:04:32.872Z",
+            "dedupeHash": "acf7bec6300b6a67ef50d97e3430b39b812bfd60e18f72e8ee8b28448766209e",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T12:04:32.874Z"
+          },
+          "extractions": [],
+          "criteriaMatches": [],
+          "suggestedQuestions": [],
+          "interviews": [],
+          "emailDrafts": [
+            {
+              "id": "cmtymjftc0004xn0j57xgq7d3",
+              "applicationId": "cmtyc7xaj000c8n566pezaqru",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Karim,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis notre dernier échange et nous voulions simplement vérifier si le processus de recrutement pour le poste de Développeur Fullstack IA / Automation vous intéresse toujours.\n\nN’hésitez pas à nous faire savoir si vous avez besoin de plus d’informations ou si vous avez des questions. Nous restons à votre disposition.\n\nBien cordialement,\n\nL'équipe recrutement",
+              "status": "DISCARDED",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T16:53:26.352Z"
+            },
+            {
+              "id": "cmtymys890004wp4r263dkzw3",
+              "applicationId": "cmtyc7xaj000c8n566pezaqru",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Karim,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis notre dernier échange il y a cinq jours et nous voulions nous assurer que le processus de recrutement pour le poste de Développeur Fullstack IA / Automation vous intéresse toujours. N’hésitez pas à nous faire savoir si vous avez besoin de plus d’informations ou si vous souhaitez poursuivre.\n\nCordialement,\n\nL'équipe recrutement",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T17:05:22.281Z"
+            }
+          ]
+        },
+        {
+          "id": "cmtyc7xf0000f8n56evdwopu3",
+          "candidateId": "cmtyc7xcj000d8n56ycjzgwys",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "stage": "RECEIVED",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T12:04:33.132Z",
+          "updatedAt": "2026-09-12T12:04:33.132Z",
+          "extractionStatus": "PENDING",
+          "candidate": {
+            "id": "cmtyc7xcj000d8n56ycjzgwys",
+            "fullName": "Nour Gharbi",
+            "email": "nour.gharbi@example.com",
+            "phone": null,
+            "cvUrl": "cvs/demo-d0fe68a629bc7dea1bd91ed0da51b7465452a060fe76d7602372ec6c0e84fe2d.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T12:04:33.041Z",
+            "dedupeHash": "d0fe68a629bc7dea1bd91ed0da51b7465452a060fe76d7602372ec6c0e84fe2d",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T12:04:33.043Z"
+          },
+          "extractions": [],
+          "criteriaMatches": [],
+          "suggestedQuestions": [],
+          "interviews": [],
+          "emailDrafts": [
+            {
+              "id": "cmtymjgiz0007xn0jukqzmy9c",
+              "applicationId": "cmtyc7xf0000f8n56evdwopu3",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Nour,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis notre dernier échange il y a cinq jours et nous voulions simplement nous assurer que le processus de recrutement pour le poste de Développeur Fullstack IA / Automation vous intéresse toujours.\n\nN’hésitez pas à nous faire part de votre disponibilité ou de toute question que vous pourriez avoir. Nous restons à votre disposition pour avancer à votre rythme, sans aucune pression.\n\nCordialement,\n\nL'équipe recrutement",
+              "status": "DISCARDED",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T16:53:27.276Z"
+            },
+            {
+              "id": "cmtymysrj0007wp4rnlng74zq",
+              "applicationId": "cmtyc7xf0000f8n56evdwopu3",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Nour,\n\nNous n'avons pas eu de retour de votre part depuis notre dernier échange concernant le poste de Développeur Fullstack IA / Automation. Nous aimerions savoir si vous êtes toujours intéressé(e) par cette opportunité et si vous avez besoin de précisions supplémentaires.\n\nBien cordialement,\n\nL'équipe recrutement",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T17:05:22.975Z"
+            }
+          ]
+        },
+        {
+          "id": "cmtycd25k0002clezxe4ked7u",
+          "candidateId": "cmtycd1z70000clez3tww3rjq",
+          "jobId": "cmtyc7wch00028n563m5nxnab",
+          "stage": "INTERVIEW_SCHEDULED",
+          "ownerId": null,
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T12:08:32.550Z",
+          "updatedAt": "2026-09-12T12:09:17.427Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtycd1z70000clez3tww3rjq",
+            "fullName": "wiem",
+            "email": "wiemb55@gmail.com",
+            "phone": null,
+            "cvUrl": "cvs/1fbabdb07d43835fdaef9609dfeb9a1868f55b6d5cebfaac6460164bb119d057-1789214911638-cv-test-nour-gharbi.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T12:08:32.320Z",
+            "dedupeHash": "1fbabdb07d43835fdaef9609dfeb9a1868f55b6d5cebfaac6460164bb119d057",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T12:08:32.323Z"
+          },
+          "extractions": [
+            {
+              "id": "cmtycd4120003clezxixp51i4",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "full_name",
+              "value": "Nour Gharbi",
+              "sourceQuote": "Nour Gharbi",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd4120004clezkx8xin03",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "email",
+              "value": "nour.gharbi.dev@example.com",
+              "sourceQuote": "nour.gharbi.dev@example.com",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd4120005clezai5axu0s",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "phone",
+              "value": "+216 55 123 456",
+              "sourceQuote": "+216 55 123 456",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd4120006cleztlecrov1",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "years_experience",
+              "value": "3 ans d'expérience",
+              "sourceQuote": "3 ans d'expérience",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd4120007clezasby7zoc",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "last_position",
+              "value": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "sourceQuote": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd4120008clezw9ajyvr8",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "React",
+              "sourceQuote": "React",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd4120009clezc0veuizl",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "Next.js",
+              "sourceQuote": "Next.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000aclezvq2abs19",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "TypeScript",
+              "sourceQuote": "TypeScript",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000bclezwny1fsza",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "Node.js",
+              "sourceQuote": "Node.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000cclezpf1rhfa1",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "Express",
+              "sourceQuote": "Express",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000dclezw36aqn2v",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "PostgreSQL",
+              "sourceQuote": "PostgreSQL",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000eclezt3i5dxfz",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "MongoDB",
+              "sourceQuote": "MongoDB",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000fclez43zt673h",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "Git",
+              "sourceQuote": "Git",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000gclezafgb1bw3",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "Docker",
+              "sourceQuote": "Docker",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000hclez68bj0y1j",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "API OpenAI",
+              "sourceQuote": "API OpenAI",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000iclezipovvpi9",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "REST API",
+              "sourceQuote": "REST API",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000jcleznpsymflq",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "skills",
+              "value": "Tailwind CSS",
+              "sourceQuote": "Tailwind CSS",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000kclezbq57ir9w",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "education",
+              "value": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "sourceQuote": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000lclez2ajkrtcx",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "languages",
+              "value": "Arabe (langue maternelle)",
+              "sourceQuote": "Arabe (langue maternelle)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000mclezvo4qrnhk",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "languages",
+              "value": "Français (courant)",
+              "sourceQuote": "Français (courant)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            },
+            {
+              "id": "cmtycd412000nclezlp8l58le",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "fieldName": "languages",
+              "value": "Anglais (professionnel)",
+              "sourceQuote": "Anglais (professionnel)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T12:08:34.982Z"
+            }
+          ],
+          "criteriaMatches": [
+            {
+              "id": "cmtycd528000pclezbdassmsc",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "criterionId": "cmtyc7wck00038n56bkjp8wsz",
+              "status": "FOUND",
+              "evidenceQuote": "Spécialisée dans les applications React/Next.js côté frontend",
+              "createdAt": "2026-09-12T12:08:36.320Z",
+              "criterion": {
+                "id": "cmtyc7wck00038n56bkjp8wsz",
+                "jobId": "cmtyc7wch00028n563m5nxnab",
+                "label": "React / Next.js"
+              }
+            },
+            {
+              "id": "cmtycd56x000rcleznjql5a47",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "criterionId": "cmtyc7wck00048n56x4r9xsqo",
+              "status": "FOUND",
+              "evidenceQuote": "Node.js côté backend",
+              "createdAt": "2026-09-12T12:08:36.489Z",
+              "criterion": {
+                "id": "cmtyc7wck00048n56x4r9xsqo",
+                "jobId": "cmtyc7wch00028n563m5nxnab",
+                "label": "Node.js"
+              }
+            },
+            {
+              "id": "cmtycd590000tclez1gjrjcwt",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "criterionId": "cmtyc7wck00058n56im84fqt4",
+              "status": "FOUND",
+              "evidenceQuote": "3 ans d'expérience en développement web moderne",
+              "createdAt": "2026-09-12T12:08:36.565Z",
+              "criterion": {
+                "id": "cmtyc7wck00058n56im84fqt4",
+                "jobId": "cmtyc7wch00028n563m5nxnab",
+                "label": "3 ans d'expérience minimum"
+              }
+            },
+            {
+              "id": "cmtycd5bj000vcleztqa2aequ",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "criterionId": "cmtyc7wck00068n56ufjr81pp",
+              "status": "FOUND",
+              "evidenceQuote": "Mise en place d'une intégration avec l'API OpenAI pour la génération automatique de comptes-rendus de réunion",
+              "createdAt": "2026-09-12T12:08:36.655Z",
+              "criterion": {
+                "id": "cmtyc7wck00068n56ufjr81pp",
+                "jobId": "cmtyc7wch00028n563m5nxnab",
+                "label": "Expérience avec des LLM / IA générative"
+              }
+            }
+          ],
+          "suggestedQuestions": [
+            {
+              "id": "cmtycd6ec000wclezb8ujpw1z",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "questionText": "Pouvez-vous décrire un projet où vous avez intégré l'API OpenAI pour générer des comptes-rendus de réunion? Quels défis techniques avez-vous rencontrés et comment les avez-vous résolus?",
+              "basedOn": "Expérience avec des LLM / IA générative",
+              "createdAt": "2026-09-12T12:08:38.053Z"
+            },
+            {
+              "id": "cmtycd6ec000xclezte6pb3bm",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "questionText": "Dans votre plateforme SaaS de gestion de projets, comment avez-vous structuré le routage côté serveur avec Next.js et Node.js?",
+              "basedOn": "React / Next.js, Node.js",
+              "createdAt": "2026-09-12T12:08:38.053Z"
+            },
+            {
+              "id": "cmtycd6ec000yclezxp9tufj9",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "questionText": "Pouvez-vous expliquer comment vous avez optimisé les performances de votre application React/Next.js, notamment en ce qui concerne le rendu côté serveur et le chargement des données?",
+              "basedOn": "React / Next.js",
+              "createdAt": "2026-09-12T12:08:38.053Z"
+            },
+            {
+              "id": "cmtycd6ec000zclez38xr2rt4",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "questionText": "Comment avez-vous géré la collaboration avec une équipe de 5 développeurs en méthodologie agile (Scrum) lors du développement de la plateforme SaaS?",
+              "basedOn": "3 ans d'expérience minimum, collaboration agile",
+              "createdAt": "2026-09-12T12:08:38.053Z"
+            }
+          ],
+          "interviews": [
+            {
+              "id": "cmtyce0nf0012clezb90bjhcm",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "slotDatetime": "2026-12-05T08:30:00.000Z",
+              "participants": [],
+              "status": "INVITED",
+              "calendarEventId": null,
+              "feedbackText": null,
+              "feedbackSubmittedAt": null,
+              "createdAt": "2026-09-12T12:09:17.259Z"
+            }
+          ],
+          "emailDrafts": [
+            {
+              "id": "cmtyce1md0014clezrofg881b",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "type": "INVITATION",
+              "draftText": "Bonjour,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de Développeur Fullstack IA / Automation au sein de Wiem. L’entretien se déroulera le samedi 5 décembre 2026 à 09 h 30. Vous pourrez nous rejoindre à notre bureau situé 12 rue des Écoles, Paris 75012, ou via visioconférence (lien à vous transmettre sous peu).\n\nMerci de bien vouloir confirmer votre présence en répondant à ce courriel.\n\nCordialement,\n\nL'équipe recrutement",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T12:09:28.186Z",
+              "createdAt": "2026-09-12T12:09:18.518Z"
+            },
+            {
+              "id": "cmtymjhco000axn0jdrklowp2",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Wiem,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis notre dernier échange concernant le poste de Développeur Fullstack IA / Automation et nous souhaitions savoir si vous êtes toujours intéressé(e) par ce processus de recrutement.\n\nN’hésitez pas à nous faire savoir si vous avez besoin de plus d’informations ou si vous avez des questions. Nous restons à votre disposition.\n\nDans l’attente de votre retour, nous vous remercions pour l’intérêt que vous portez à notre entreprise.\n\nCordialement,\n\nL'équipe recrutement",
+              "status": "DISCARDED",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T16:53:28.344Z"
+            },
+            {
+              "id": "cmtymyt3l000awp4r80hsucmt",
+              "applicationId": "cmtycd25k0002clezxe4ked7u",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Wiem,\n\nNous espérons que vous allez bien. Nous n’avons pas eu de retour de votre part depuis notre dernier échange et nous voulions simplement vérifier si le processus de recrutement pour le poste de Développeur Fullstack IA / Automation vous intéresse toujours.\n\nN’hésitez pas à nous faire savoir si vous avez besoin de plus d’informations ou si vous souhaitez poursuivre la discussion. Nous restons à votre disposition.\n\nBien cordialement,\n\nL'équipe recrutement",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T17:05:23.409Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cmtylk8wa0000tz17sojk8iis",
+      "title": "Devops Engineer",
+      "description": "Automatisation : Mettre en place des pipelines CI/CD (intégration et déploiement continus).\nInfrastructure : Gérer et provisionner les environnements Cloud (AWS, Azure, GCP).\nConteneurisation : Utiliser des outils comme Docker et Kubernetes.\nSupervision : Assurer la disponibilité, la sécurité et le monitoring des plateformes en production.",
+      "status": "open",
+      "createdAt": "2026-09-12T16:26:04.424Z",
+      "criteria": [
+        {
+          "id": "cmtylk8wa0001tz17yhtb2229",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "label": "CI/CD"
+        },
+        {
+          "id": "cmtylk8wa0002tz17c3sqt6ek",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "label": "Cloud"
+        },
+        {
+          "id": "cmtylk8wa0003tz17odxljl6w",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "label": "AWS"
+        },
+        {
+          "id": "cmtylk8wa0004tz17iytjppht",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "label": "Kubernetes"
+        }
+      ],
+      "applications": [
+        {
+          "id": "cmtylli9f0007tz1741g5xd1y",
+          "candidateId": "cmtylli5c0005tz173nch9dbs",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "stage": "DECIDED",
+          "ownerId": null,
+          "decisionReason": "le candidat est accepté",
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T16:27:03.219Z",
+          "updatedAt": "2026-09-12T18:12:04.431Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtylli5c0005tz173nch9dbs",
+            "fullName": "WiemBF",
+            "email": "wiemb55@gmail.com",
+            "phone": null,
+            "cvUrl": "cvs/88a11cd1a2e86576532b6706fe5c0d6b2159b3271611df185f02e4be2dfb85b6-1789230422654-cv-test-nour-gharbi.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T16:27:03.072Z",
+            "dedupeHash": "88a11cd1a2e86576532b6706fe5c0d6b2159b3271611df185f02e4be2dfb85b6",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T16:27:03.073Z"
+          },
+          "extractions": [
+            {
+              "id": "cmtyllk5h0008tz170saixqrp",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "full_name",
+              "value": "Nour Gharbi",
+              "sourceQuote": "Nour Gharbi",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5h0009tz17l2lougqn",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "email",
+              "value": "nour.gharbi.dev@example.com",
+              "sourceQuote": "nour.gharbi.dev@example.com",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5h000atz17pycpdiwl",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "phone",
+              "value": "+216 55 123 456",
+              "sourceQuote": "+216 55 123 456",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5h000btz17aahrn3bs",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "years_experience",
+              "value": "3 ans d'expérience",
+              "sourceQuote": "3 ans d'expérience",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5h000ctz17449vr8ej",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "last_position",
+              "value": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "sourceQuote": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5h000dtz17j21gh6w7",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "React",
+              "sourceQuote": "React",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000etz17dycph650",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "Next.js",
+              "sourceQuote": "Next.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000ftz1731cxuf8y",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "TypeScript",
+              "sourceQuote": "TypeScript",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000gtz17v91s1sl3",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "Node.js",
+              "sourceQuote": "Node.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000htz17p5s6fzfy",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "Express",
+              "sourceQuote": "Express",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000itz17tmjf131p",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "PostgreSQL",
+              "sourceQuote": "PostgreSQL",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000jtz17h2o7e7f3",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "MongoDB",
+              "sourceQuote": "MongoDB",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000ktz17w3qzyxtv",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "Git",
+              "sourceQuote": "Git",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000ltz17u3oq4rqf",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "Docker",
+              "sourceQuote": "Docker",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000mtz17xbxdps4v",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "API OpenAI",
+              "sourceQuote": "API OpenAI",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000ntz17gj99elux",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "REST API",
+              "sourceQuote": "REST API",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000otz17cir8gqv7",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "skills",
+              "value": "Tailwind CSS",
+              "sourceQuote": "Tailwind CSS",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000ptz17myzfof0q",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "education",
+              "value": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "sourceQuote": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000qtz17pledf2uy",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "languages",
+              "value": "Arabe (langue maternelle)",
+              "sourceQuote": "Arabe (langue maternelle)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000rtz17rjybhejy",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "languages",
+              "value": "Français (courant)",
+              "sourceQuote": "Français (courant)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            },
+            {
+              "id": "cmtyllk5i000stz17p62c7hgt",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "fieldName": "languages",
+              "value": "Anglais (professionnel)",
+              "sourceQuote": "Anglais (professionnel)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T16:27:05.670Z"
+            }
+          ],
+          "criteriaMatches": [
+            {
+              "id": "cmtyllkqu000utz179ut1xhjz",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "criterionId": "cmtylk8wa0001tz17yhtb2229",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T16:27:06.438Z",
+              "criterion": {
+                "id": "cmtylk8wa0001tz17yhtb2229",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "CI/CD"
+              }
+            },
+            {
+              "id": "cmtyllkus000wtz1712xxbixo",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "criterionId": "cmtylk8wa0002tz17c3sqt6ek",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T16:27:06.581Z",
+              "criterion": {
+                "id": "cmtylk8wa0002tz17c3sqt6ek",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "Cloud"
+              }
+            },
+            {
+              "id": "cmtyllkws000ytz17l6q992df",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "criterionId": "cmtylk8wa0003tz17odxljl6w",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T16:27:06.652Z",
+              "criterion": {
+                "id": "cmtylk8wa0003tz17odxljl6w",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "AWS"
+              }
+            },
+            {
+              "id": "cmtyllkyr0010tz17l3oachb7",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "criterionId": "cmtylk8wa0004tz17iytjppht",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T16:27:06.723Z",
+              "criterion": {
+                "id": "cmtylk8wa0004tz17iytjppht",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "Kubernetes"
+              }
+            }
+          ],
+          "suggestedQuestions": [
+            {
+              "id": "cmtylllq30011tz17gj8pr54b",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "questionText": "Pouvez-vous décrire votre expérience dans la mise en place de pipelines CI/CD pour des projets React/Node.js, y compris les outils que vous avez utilisés et les défis rencontrés?",
+              "basedOn": "CI/CD",
+              "createdAt": "2026-09-12T16:27:07.707Z"
+            },
+            {
+              "id": "cmtylllq30012tz17yvcqdwnz",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "questionText": "Comment avez-vous déployé vos applications sur le cloud ? Avez‑vous utilisé AWS, Azure ou GCP, et quels services spécifiques (EC2, ECS, Lambda, S3, etc.) avez‑vous exploités ?",
+              "basedOn": "Cloud, AWS",
+              "createdAt": "2026-09-12T16:27:07.707Z"
+            },
+            {
+              "id": "cmtylllq30013tz17isuxfjhw",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "questionText": "Avez‑vous déjà orchestré des conteneurs Docker avec Kubernetes ? Si oui, quel type de workloads avez‑vous déployé et comment avez‑vous géré la scalabilité et la résilience ?",
+              "basedOn": "Kubernetes",
+              "createdAt": "2026-09-12T16:27:07.707Z"
+            },
+            {
+              "id": "cmtylllq30014tz17ne0wxsng",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "questionText": "Dans votre projet SaaS chez TechNova, avez‑vous intégré des outils d'automatisation (ex. GitHub Actions, GitLab CI, Jenkins) pour le build, le test et le déploiement continu ?",
+              "basedOn": "CI/CD, Cloud",
+              "createdAt": "2026-09-12T16:27:07.707Z"
+            }
+          ],
+          "interviews": [
+            {
+              "id": "cmtylmwqu0017tz17ayri620o",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "slotDatetime": "2026-10-06T14:30:00.000Z",
+              "participants": [],
+              "status": "INVITED",
+              "calendarEventId": null,
+              "feedbackText": null,
+              "feedbackSubmittedAt": null,
+              "createdAt": "2026-09-12T16:28:08.646Z"
+            },
+            {
+              "id": "cmtynkw150002idrg730iqkek",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "slotDatetime": "2026-12-04T08:00:00.000Z",
+              "participants": [],
+              "status": "DECLINED",
+              "calendarEventId": null,
+              "feedbackText": null,
+              "feedbackSubmittedAt": null,
+              "createdAt": "2026-09-12T17:22:33.638Z"
+            },
+            {
+              "id": "cmtyoi5gd00017xlanfae7lyn",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "slotDatetime": "2027-01-01T10:00:00.000Z",
+              "participants": [],
+              "status": "DECLINED",
+              "calendarEventId": null,
+              "feedbackText": null,
+              "feedbackSubmittedAt": null,
+              "createdAt": "2026-09-12T17:48:25.491Z"
+            },
+            {
+              "id": "cmtypaav2000a7xlaul9gnmlm",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "slotDatetime": "2026-12-11T08:00:00.000Z",
+              "participants": [],
+              "status": "COMPLETED",
+              "calendarEventId": null,
+              "feedbackText": "Entretien validé",
+              "feedbackSubmittedAt": "2026-09-12T18:11:29.923Z",
+              "createdAt": "2026-09-12T18:10:18.878Z"
+            }
+          ],
+          "emailDrafts": [
+            {
+              "id": "cmtylmx660019tz17j3ruevoo",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "INVITATION",
+              "draftText": "Bonjour WiemBF,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de Devops Engineer au sein de notre équipe. L’entretien se déroulera le mardi 6 octobre 2026 à 14h30. Vous pourrez rejoindre la session en visioconférence via le lien suivant : https://meet.wiembf.com/entretien-devops.\n\nNous vous remercions de bien vouloir confirmer votre disponibilité en répondant à ce courriel.\n\nÀ très bientôt,\n\nL'équipe recrutement",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T16:28:34.993Z",
+              "createdAt": "2026-09-12T16:28:09.199Z"
+            },
+            {
+              "id": "cmtymji10000dxn0j7ympv12e",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour WiemBF,\n\nNous n’avons pas eu de retour de votre part depuis notre dernier échange il y a cinq jours et nous souhaitions simplement savoir si le processus de recrutement pour le poste de DevOps Engineer vous intéresse toujours. \n\nN’hésitez pas à nous faire part de votre décision, sans aucune pression de notre part.\n\nBien à vous,\n\nL'équipe recrutement",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T17:21:12.186Z",
+              "createdAt": "2026-09-12T16:53:29.220Z"
+            },
+            {
+              "id": "cmtynkx2s0004idrg29lez38k",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "INVITATION",
+              "draftText": "Bonjour WiemBF,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de Devops Engineer au sein de notre équipe. L’entretien se déroulera le vendredi 4 décembre 2026 à 09:00. \n\nLieu : [adresse ou lien de visioconférence]  \nDurée approximative : 45 minutes  \n\nMerci de bien vouloir confirmer votre disponibilité en répondant à ce courriel. N’hésitez pas à nous faire part de toute question préalable.\n\nAu plaisir de vous rencontrer,\n\nL'équipe recrutement\n\nSi ce créneau ne vous convient pas, vous pouvez le décliner ici : http://localhost:3000/public/interviews/cmtynkw150002idrg730iqkek/decline",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T17:22:54.394Z",
+              "createdAt": "2026-09-12T17:22:34.996Z"
+            },
+            {
+              "id": "cmtynm5hn0009idrglzh0ibuc",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour WiemBF,\n\nNous espérons que vous allez bien. Nous voulions simplement nous assurer que vous avez bien reçu notre précédent message concernant votre candidature au poste de DevOps Engineer et savoir si vous êtes toujours intéressé(e) par ce poste. Aucun engagement de votre part n’est requis ; nous restons à votre disposition pour toute question ou information supplémentaire.\n\nBien cordialement,\n\nL'équipe recrutement\n\n(Suite à un entretien décliné — proposer un nouveau créneau.)",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T17:23:32.555Z"
+            },
+            {
+              "id": "cmtyoi6g100037xlaikni6f6y",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "INVITATION",
+              "draftText": "Bonjour WiemBF,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de DevOps Engineer au sein de notre équipe. L’entretien aura lieu le vendredi 1 janvier 2027 à 11 h00. Vous pourrez rejoindre la réunion via le lien suivant : [lien Zoom] (ou nous vous accueillerons dans nos locaux au 12 rue de l’Innovation, 75015 Paris).\n\nMerci de bien vouloir confirmer votre présence en répondant à ce courriel. N’hésitez pas à nous faire part de toute question ou besoin d’information supplémentaire.\n\nAu plaisir de vous rencontrer,\n\nL'équipe recrutement\n\nSi ce créneau ne vous convient pas, vous pouvez le décliner ici : http://localhost:3000/public/interviews/cmtyoi5gd00017xlanfae7lyn/decline",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T17:49:14.592Z",
+              "createdAt": "2026-09-12T17:48:26.785Z"
+            },
+            {
+              "id": "cmtyojv7l00087xla3ebmh5vs",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour WiemBF,\n\nNous espérons que vous allez bien. Nous souhaitons simplement vérifier si le poste de Devops Engineer vous intéresse toujours et si vous avez besoin d’informations supplémentaires pour avancer dans le processus de recrutement.\n\nN’hésitez pas à nous faire part de vos questions ou de votre disponibilité pour la prochaine étape.\n\nCordialement,\n\nL'équipe recrutement\n\n(Suite à un entretien décliné — proposer un nouveau créneau.)",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T17:49:45.538Z"
+            },
+            {
+              "id": "cmtypac8w000c7xlahv1b99kc",
+              "applicationId": "cmtylli9f0007tz1741g5xd1y",
+              "type": "INVITATION",
+              "draftText": "Bonjour WiemBF,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de DevOps Engineer au sein de notre équipe. L'entretien aura lieu le vendredi 11 décembre 2026 à 09:00. Nous vous communiquerons prochainement le lieu ou les modalités de connexion.\n\nDans l'attente de notre échange, nous vous remercions pour l'intérêt que vous portez à WiemBF.\n\nL'équipe recrutement\n\nSi ce créneau ne vous convient pas, vous pouvez le décliner ici : https://ats-responsable.vercel.app/public/interviews/cmtypaav2000a7xlaul9gnmlm/decline",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T18:10:20.672Z"
+            }
+          ]
+        },
+        {
+          "id": "cmtytb85g0002qyax0nhb6w4a",
+          "candidateId": "cmtytb7yy0000qyaxr2t5gjzi",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "stage": "INTERVIEW_DONE",
+          "ownerId": null,
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T20:03:00.480Z",
+          "updatedAt": "2026-09-12T20:20:29.467Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtytb7yy0000qyaxr2t5gjzi",
+            "fullName": "lllllll",
+            "email": "llll@gmail.com",
+            "phone": null,
+            "cvUrl": "cvs/dbe3e81515655d1a18b095d5498d051e32edb914267d1b887748cbc99b704424-1789243379423-cv-test-nour-gharbi.pdf",
+            "portfolioUrl": "https://github.com/lllllll-gif",
+            "consentGiven": true,
+            "consentDate": "2026-09-12T20:03:00.241Z",
+            "dedupeHash": "dbe3e81515655d1a18b095d5498d051e32edb914267d1b887748cbc99b704424",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T20:03:00.248Z"
+          },
+          "extractions": [
+            {
+              "id": "cmtytbagn0003qyaxo9tbjfez",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "full_name",
+              "value": "Nour Gharbi",
+              "sourceQuote": "Nour Gharbi",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn0004qyaxdeh2sv4y",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "email",
+              "value": "nour.gharbi.dev@example.com",
+              "sourceQuote": "nour.gharbi.dev@example.com",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn0005qyax1zr4smqf",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "phone",
+              "value": "+216 55 123 456",
+              "sourceQuote": "+216 55 123 456",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn0006qyaxpls6iphc",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "years_experience",
+              "value": "3 ans d'expérience",
+              "sourceQuote": "3 ans d'expérience",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn0007qyaxyx14tb7i",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "last_position",
+              "value": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "sourceQuote": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn0008qyaxk623feq8",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "React",
+              "sourceQuote": "React",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn0009qyaxqpru3u3f",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "Next.js",
+              "sourceQuote": "Next.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn000aqyax7i4a5kiw",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "TypeScript",
+              "sourceQuote": "TypeScript",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn000bqyaxa92qsnh7",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "Node.js",
+              "sourceQuote": "Node.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn000cqyaxpnxwlnip",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "Express",
+              "sourceQuote": "Express",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn000dqyax35426e6s",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "PostgreSQL",
+              "sourceQuote": "PostgreSQL",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn000eqyaxieo7l3gu",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "MongoDB",
+              "sourceQuote": "MongoDB",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbagn000fqyaxvjyjdkj5",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "Git",
+              "sourceQuote": "Git",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000gqyaxhh4ak91c",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "Docker",
+              "sourceQuote": "Docker",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000hqyaxjwrxmsfa",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "API OpenAI",
+              "sourceQuote": "API OpenAI",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000iqyaxzkb58lgj",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "REST API",
+              "sourceQuote": "REST API",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000jqyax9exvfb67",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "skills",
+              "value": "Tailwind CSS",
+              "sourceQuote": "Tailwind CSS",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000kqyax9hq1eeg0",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "education",
+              "value": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "sourceQuote": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000lqyaxq5vmptlg",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "languages",
+              "value": "Arabe (langue maternelle)",
+              "sourceQuote": "Arabe (langue maternelle)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000mqyax7yb78rq8",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "languages",
+              "value": "Français (courant)",
+              "sourceQuote": "Français (courant)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            },
+            {
+              "id": "cmtytbago000nqyaxy3ift6uv",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "fieldName": "languages",
+              "value": "Anglais (professionnel)",
+              "sourceQuote": "Anglais (professionnel)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:03:03.479Z"
+            }
+          ],
+          "criteriaMatches": [
+            {
+              "id": "cmtytbbba000pqyaxjznrcgvu",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "criterionId": "cmtylk8wa0001tz17yhtb2229",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:03:04.582Z",
+              "criterion": {
+                "id": "cmtylk8wa0001tz17yhtb2229",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "CI/CD"
+              }
+            },
+            {
+              "id": "cmtytbbfw000rqyaxqx188amu",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "criterionId": "cmtylk8wa0002tz17c3sqt6ek",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:03:04.748Z",
+              "criterion": {
+                "id": "cmtylk8wa0002tz17c3sqt6ek",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "Cloud"
+              }
+            },
+            {
+              "id": "cmtytbbhy000tqyaxi9r0p4vr",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "criterionId": "cmtylk8wa0003tz17odxljl6w",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:03:04.822Z",
+              "criterion": {
+                "id": "cmtylk8wa0003tz17odxljl6w",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "AWS"
+              }
+            },
+            {
+              "id": "cmtytbbk6000vqyaxb6d7fdfb",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "criterionId": "cmtylk8wa0004tz17iytjppht",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:03:04.902Z",
+              "criterion": {
+                "id": "cmtylk8wa0004tz17iytjppht",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "Kubernetes"
+              }
+            }
+          ],
+          "suggestedQuestions": [
+            {
+              "id": "cmtytbcsz000wqyaxxbojg64t",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "questionText": "Could you describe a CI/CD pipeline you have set up for a project? Which tools and steps were involved?",
+              "basedOn": "CI/CD",
+              "createdAt": "2026-09-12T20:03:06.516Z"
+            },
+            {
+              "id": "cmtytbcsz000xqyax30pj9afp",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "questionText": "Have you deployed any of your applications to a cloud platform? If so, which provider and services did you use?",
+              "basedOn": "Cloud",
+              "createdAt": "2026-09-12T20:03:06.516Z"
+            },
+            {
+              "id": "cmtytbcsz000yqyaxu426ikw2",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "questionText": "What experience do you have with AWS services such as ECS, Lambda, or S3? Can you give an example of how you used them?",
+              "basedOn": "AWS",
+              "createdAt": "2026-09-12T20:03:06.516Z"
+            },
+            {
+              "id": "cmtytbcsz000zqyax9g09kdza",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "questionText": "Have you worked with Kubernetes for container orchestration? If yes, describe the cluster setup and deployment process.",
+              "basedOn": "Kubernetes",
+              "createdAt": "2026-09-12T20:03:06.516Z"
+            },
+            {
+              "id": "cmtytbct00010qyaxr16h5ku9",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "questionText": "In your recent SaaS platform, how did you integrate the OpenAI API for meeting summaries, and what challenges did you face?",
+              "basedOn": "OpenAI integration",
+              "createdAt": "2026-09-12T20:03:06.516Z"
+            }
+          ],
+          "interviews": [
+            {
+              "id": "cmtytnfl20013qyaxqzceak11",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "slotDatetime": "2027-05-04T11:00:00.000Z",
+              "participants": [],
+              "status": "COMPLETED",
+              "calendarEventId": null,
+              "feedbackText": "aaaaaa",
+              "feedbackSubmittedAt": "2026-09-12T20:20:28.674Z",
+              "createdAt": "2026-09-12T20:12:29.990Z"
+            }
+          ],
+          "emailDrafts": [
+            {
+              "id": "cmtytngla0015qyaxwu08wabf",
+              "applicationId": "cmtytb85g0002qyax0nhb6w4a",
+              "type": "INVITATION",
+              "draftText": "Bonjour lllllll,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de DevOps Engineer au sein de notre équipe. L'entretien se déroulera le mardi 4 mai 2027 à 12h00. Veuillez nous confirmer votre disponibilité et nous indiquer si vous préférez un entretien en présentiel ou en visioconférence.\n\nDans l'attente de votre retour, nous restons à votre disposition pour toute information complémentaire.\n\nCordialement,\n\nL'équipe recrutement\n\nSi ce créneau ne vous convient pas, vous pouvez le décliner ici : https://ats-responsable.vercel.app/public/interviews/cmtytnfl20013qyaxqzceak11/decline",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T20:12:31.294Z"
+            }
+          ]
+        },
+        {
+          "id": "cmtyuckz80002vb8larp7yw3l",
+          "candidateId": "cmtyuckva0000vb8lxr6vvoc3",
+          "jobId": "cmtylk8wa0000tz17sojk8iis",
+          "stage": "SCREENING",
+          "ownerId": null,
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T20:32:03.380Z",
+          "updatedAt": "2026-09-12T20:33:36.513Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtyuckva0000vb8lxr6vvoc3",
+            "fullName": "bbbbb",
+            "email": "wiemb55@gmail.com",
+            "phone": null,
+            "cvUrl": "cvs/a278ff49e197842f8ee00b96e7d10c72d42ad7764bea9f925a003aa186facaa8-1789245122400-cv-test-nour-gharbi.pdf",
+            "portfolioUrl": "https://github.com/bbbb-gif",
+            "consentGiven": true,
+            "consentDate": "2026-09-12T20:32:03.238Z",
+            "dedupeHash": "a278ff49e197842f8ee00b96e7d10c72d42ad7764bea9f925a003aa186facaa8",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T20:32:03.239Z"
+          },
+          "extractions": [
+            {
+              "id": "cmtyudzmb0005vb8l7elv2gkt",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "full_name",
+              "value": "Nour Gharbi",
+              "sourceQuote": "Nour Gharbi",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb0006vb8l0qck94df",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "email",
+              "value": "nour.gharbi.dev@example.com",
+              "sourceQuote": "nour.gharbi.dev@example.com",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb0007vb8l6ky4anw8",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "phone",
+              "value": "+216 55 123 456",
+              "sourceQuote": "+216 55 123 456",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb0008vb8lzkjwsgq5",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "years_experience",
+              "value": "3 ans d'expérience",
+              "sourceQuote": "3 ans d'expérience",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb0009vb8ls4awarbg",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "last_position",
+              "value": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "sourceQuote": "Développeuse Fullstack — TechNova (Tunis) — Jan 2023 à aujourd'hui",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000avb8lfzs4q1ek",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "React",
+              "sourceQuote": "React",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000bvb8lkuga811w",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "Next.js",
+              "sourceQuote": "Next.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000cvb8lbptg32xn",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "TypeScript",
+              "sourceQuote": "TypeScript",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000dvb8lh7diwju2",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "Node.js",
+              "sourceQuote": "Node.js",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000evb8led52kkkk",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "Express",
+              "sourceQuote": "Express",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000fvb8lub77o7tv",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "PostgreSQL",
+              "sourceQuote": "PostgreSQL",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000gvb8l5jtlp7me",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "MongoDB",
+              "sourceQuote": "MongoDB",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000hvb8l32r19alu",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "Git",
+              "sourceQuote": "Git",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000ivb8laptwcsbq",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "Docker",
+              "sourceQuote": "Docker",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000jvb8lagk4i8ht",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "API OpenAI",
+              "sourceQuote": "API OpenAI",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000kvb8lppwezh7y",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "REST API",
+              "sourceQuote": "REST API",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000lvb8lls7hmast",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "skills",
+              "value": "Tailwind CSS",
+              "sourceQuote": "Tailwind CSS",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000mvb8lth9hih2v",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "education",
+              "value": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "sourceQuote": "Licence en Informatique — Université de Tunis El Manar — 2018 à 2021",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000nvb8l50m5k0ow",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "languages",
+              "value": "Arabe (langue maternelle)",
+              "sourceQuote": "Arabe (langue maternelle)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000ovb8lgqmrarvz",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "languages",
+              "value": "Français (courant)",
+              "sourceQuote": "Français (courant)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            },
+            {
+              "id": "cmtyudzmb000pvb8lxmd9bdek",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "fieldName": "languages",
+              "value": "Anglais (professionnel)",
+              "sourceQuote": "Anglais (professionnel)",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:33:09.011Z"
+            }
+          ],
+          "criteriaMatches": [
+            {
+              "id": "cmtyuejm8000uvb8l2tadkwbv",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "criterionId": "cmtylk8wa0001tz17yhtb2229",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:33:34.857Z",
+              "criterion": {
+                "id": "cmtylk8wa0001tz17yhtb2229",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "CI/CD"
+              }
+            },
+            {
+              "id": "cmtyuejqk000wvb8lz1heosde",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "criterionId": "cmtylk8wa0002tz17c3sqt6ek",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:33:35.084Z",
+              "criterion": {
+                "id": "cmtylk8wa0002tz17c3sqt6ek",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "Cloud"
+              }
+            },
+            {
+              "id": "cmtyuejsj000yvb8l855slp6s",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "criterionId": "cmtylk8wa0003tz17odxljl6w",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:33:35.155Z",
+              "criterion": {
+                "id": "cmtylk8wa0003tz17odxljl6w",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "AWS"
+              }
+            },
+            {
+              "id": "cmtyuejui0010vb8luztz14dj",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "criterionId": "cmtylk8wa0004tz17iytjppht",
+              "status": "NOT_FOUND",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:33:35.227Z",
+              "criterion": {
+                "id": "cmtylk8wa0004tz17iytjppht",
+                "jobId": "cmtylk8wa0000tz17sojk8iis",
+                "label": "Kubernetes"
+              }
+            }
+          ],
+          "suggestedQuestions": [
+            {
+              "id": "cmtyuekmh0011vb8lhnpx1bqj",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "questionText": "Pouvez‑vous décrire une pipeline CI/CD que vous avez mise en place pour un projet React/Node.js, y compris les outils utilisés et comment vous avez géré les tests automatisés ?",
+              "basedOn": "CI/CD",
+              "createdAt": "2026-09-12T20:33:36.233Z"
+            },
+            {
+              "id": "cmtyuekmh0012vb8l1vetw5ja",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "questionText": "Avez‑vous déployé vos applications sur un cloud public ? Si oui, quel fournisseur avez‑vous utilisé et quelles stratégies de déploiement (ex. blue/green, canary) avez‑vous appliquées ?",
+              "basedOn": "Cloud",
+              "createdAt": "2026-09-12T20:33:36.233Z"
+            },
+            {
+              "id": "cmtyuekmh0013vb8lom7h221k",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "questionText": "Quel est votre niveau de familiarité avec AWS ? Pouvez‑vous donner un exemple concret d’utilisation d’un service AWS (ex. EC2, ECS, Lambda, S3) dans un projet récent ?",
+              "basedOn": "AWS",
+              "createdAt": "2026-09-12T20:33:36.233Z"
+            },
+            {
+              "id": "cmtyuekmh0014vb8l61bu813d",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "questionText": "Avez‑vous déjà orchestré des conteneurs avec Kubernetes ? Si oui, décrivez votre expérience, y compris le cluster, les déploiements et les stratégies de scaling ?",
+              "basedOn": "Kubernetes",
+              "createdAt": "2026-09-12T20:33:36.233Z"
+            },
+            {
+              "id": "cmtyuekmh0015vb8lfmxnbf59",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "questionText": "Comment avez‑vous intégré l’API OpenAI dans votre plateforme SaaS ? Quels défis techniques avez‑vous rencontrés et comment les avez‑vous résolus ?",
+              "basedOn": "Strengths: AI integration",
+              "createdAt": "2026-09-12T20:33:36.233Z"
+            }
+          ],
+          "interviews": [
+            {
+              "id": "cmtyudz8s0004vb8lt0ge5kwu",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "slotDatetime": "2026-09-12T20:40:00.000Z",
+              "participants": [],
+              "status": "INVITED",
+              "calendarEventId": null,
+              "feedbackText": null,
+              "feedbackSubmittedAt": null,
+              "createdAt": "2026-09-12T20:33:08.525Z"
+            }
+          ],
+          "emailDrafts": [
+            {
+              "id": "cmtyudzu5000rvb8lybaj6dx9",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "type": "INVITATION",
+              "draftText": "Bonjour bbbbb,\n\nNous avons le plaisir de vous convier à un entretien pour le poste de Devops Engineer. Celui-ci se déroulera le samedi 12 septembre 2026 à 20h40. Veuillez nous confirmer votre disponibilité en répondant à ce courriel.\n\nNous restons à votre disposition pour toute information complémentaire.\n\nCordialement,\n\nL'équipe recrutement\n\nSi ce créneau ne vous convient pas, vous pouvez le décliner ici : http://localhost:3000/public/interviews/cmtyudz8s0004vb8lt0ge5kwu/decline",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T20:33:37.049Z",
+              "createdAt": "2026-09-12T20:33:09.225Z"
+            },
+            {
+              "id": "cmtyuhffc0019vb8l2dc04ti1",
+              "applicationId": "cmtyuckz80002vb8larp7yw3l",
+              "type": "REMINDER",
+              "draftText": "Bonjour bbbbb,\n\nNous vous rappelons que votre entretien pour le poste de Devops Engineer aura lieu demain, le samedi 12 septembre 2026, à 20h40. Nous vous attendons à l'adresse indiquée dans votre invitation. N’hésitez pas à nous contacter si vous avez besoin de précisions.\n\nCordialement,\n\nL'équipe recrutement",
+              "status": "SENT",
+              "reviewedBy": null,
+              "sentAt": "2026-09-12T20:36:39.057Z",
+              "createdAt": "2026-09-12T20:35:49.464Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cmtyvbxo90002vy4zd9xtwznj",
+      "title": "Développeur Fullstack IA / Automation",
+      "description": "Poste orienté Next.js, automatisation de workflows et intégration IA.",
+      "status": "open",
+      "createdAt": "2026-09-12T20:59:32.794Z",
+      "criteria": [
+        {
+          "id": "cmtyvbxoa0003vy4zbxn37ew7",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "label": "React / Next.js"
+        },
+        {
+          "id": "cmtyvbxoa0004vy4zbeu56orl",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "label": "Node.js"
+        },
+        {
+          "id": "cmtyvbxoa0005vy4z664kzq7w",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "label": "3 ans d'expérience minimum"
+        },
+        {
+          "id": "cmtyvbxoa0006vy4zeatcscfa",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "label": "Expérience avec des LLM / IA générative"
+        }
+      ],
+      "applications": [
+        {
+          "id": "cmtyvbyrh0009vy4zcghkueg8",
+          "candidateId": "cmtyvbyjh0007vy4zkltymrt9",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "stage": "SCREENING",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T20:59:34.203Z",
+          "updatedAt": "2026-09-12T20:59:34.203Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtyvbyjh0007vy4zkltymrt9",
+            "fullName": "Nour Gharbi",
+            "email": "nour.gharbi@example.com",
+            "phone": null,
+            "cvUrl": "cvs/demo-d0fe68a629bc7dea1bd91ed0da51b7465452a060fe76d7602372ec6c0e84fe2d.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T20:59:33.912Z",
+            "dedupeHash": "d0fe68a629bc7dea1bd91ed0da51b7465452a060fe76d7602372ec6c0e84fe2d",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T20:59:33.917Z"
+          },
+          "extractions": [
+            {
+              "id": "cmtyvbyxy000avy4ziecvyi65",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "fieldName": "full_name",
+              "value": "Nour Gharbi",
+              "sourceQuote": "Nour Gharbi",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:59:34.438Z"
+            },
+            {
+              "id": "cmtyvbyxy000bvy4z9z8aifif",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "fieldName": "years_experience",
+              "value": "3",
+              "sourceQuote": "3 ans d'expérience",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:59:34.438Z"
+            },
+            {
+              "id": "cmtyvbyxy000cvy4zb6mfltx4",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "fieldName": "last_position",
+              "value": "Développeuse Fullstack",
+              "sourceQuote": "Développeuse Fullstack — TechNova",
+              "correctedByRecruiter": false,
+              "correctedValue": null,
+              "correctedAt": null,
+              "correctedByUserId": null,
+              "createdAt": "2026-09-12T20:59:34.438Z"
+            }
+          ],
+          "criteriaMatches": [
+            {
+              "id": "cmtyvbza3000evy4z21ii0xdx",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "criterionId": "cmtyvbxoa0003vy4zbxn37ew7",
+              "status": "FOUND",
+              "evidenceQuote": "React, Next.js",
+              "createdAt": "2026-09-12T20:59:34.875Z",
+              "criterion": {
+                "id": "cmtyvbxoa0003vy4zbxn37ew7",
+                "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+                "label": "React / Next.js"
+              }
+            },
+            {
+              "id": "cmtyvbzgq000gvy4z7vm1geae",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "criterionId": "cmtyvbxoa0004vy4zbeu56orl",
+              "status": "FOUND",
+              "evidenceQuote": "Node.js, Express",
+              "createdAt": "2026-09-12T20:59:35.114Z",
+              "criterion": {
+                "id": "cmtyvbxoa0004vy4zbeu56orl",
+                "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+                "label": "Node.js"
+              }
+            },
+            {
+              "id": "cmtyvbzl0000ivy4z0hy4muv1",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "criterionId": "cmtyvbxoa0005vy4z664kzq7w",
+              "status": "FOUND",
+              "evidenceQuote": "3 ans d'expérience",
+              "createdAt": "2026-09-12T20:59:35.269Z",
+              "criterion": {
+                "id": "cmtyvbxoa0005vy4z664kzq7w",
+                "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+                "label": "3 ans d'expérience minimum"
+              }
+            },
+            {
+              "id": "cmtyvbznk000kvy4z68rr2zca",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "criterionId": "cmtyvbxoa0006vy4zeatcscfa",
+              "status": "UNCERTAIN",
+              "evidenceQuote": null,
+              "createdAt": "2026-09-12T20:59:35.361Z",
+              "criterion": {
+                "id": "cmtyvbxoa0006vy4zeatcscfa",
+                "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+                "label": "Expérience avec des LLM / IA générative"
+              }
+            }
+          ],
+          "suggestedQuestions": [
+            {
+              "id": "cmtyvbzqs000mvy4zsr00bv0o",
+              "applicationId": "cmtyvbyrh0009vy4zcghkueg8",
+              "questionText": "Pouvez-vous détailler une intégration IA générative que vous avez menée ?",
+              "basedOn": "Critère IA générative marqué incertain",
+              "createdAt": "2026-09-12T20:59:35.476Z"
+            }
+          ],
+          "interviews": [],
+          "emailDrafts": []
+        },
+        {
+          "id": "cmtyvbzzk000pvy4z0mqz4v0t",
+          "candidateId": "cmtyvbzxc000nvy4zsijq04mc",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "stage": "RECEIVED",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T20:59:35.792Z",
+          "updatedAt": "2026-09-12T20:59:35.792Z",
+          "extractionStatus": "FAILED",
+          "candidate": {
+            "id": "cmtyvbzxc000nvy4zsijq04mc",
+            "fullName": "Karim Trabelsi",
+            "email": "karim.trabelsi@example.com",
+            "phone": null,
+            "cvUrl": "cvs/demo-acf7bec6300b6a67ef50d97e3430b39b812bfd60e18f72e8ee8b28448766209e.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T20:59:35.711Z",
+            "dedupeHash": "acf7bec6300b6a67ef50d97e3430b39b812bfd60e18f72e8ee8b28448766209e",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T20:59:35.712Z"
+          },
+          "extractions": [],
+          "criteriaMatches": [],
+          "suggestedQuestions": [],
+          "interviews": [],
+          "emailDrafts": []
+        },
+        {
+          "id": "cmtyvc06r000svy4zacfpklf2",
+          "candidateId": "cmtyvc031000qvy4z0f5egs03",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "stage": "INTERVIEW_SCHEDULED",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T20:59:36.052Z",
+          "updatedAt": "2026-09-12T20:59:36.052Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtyvc031000qvy4z0f5egs03",
+            "fullName": "Aïcha Ben Salah",
+            "email": "aicha.bensalah@example.com",
+            "phone": null,
+            "cvUrl": "cvs/demo-c5521edfcf59ae056969c8d329fcbf900bf5cf8a536b875a66f71f95a43c6c15.pdf",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T20:59:35.914Z",
+            "dedupeHash": "c5521edfcf59ae056969c8d329fcbf900bf5cf8a536b875a66f71f95a43c6c15",
+            "deletionRequested": false,
+            "deletionRequestedAt": null,
+            "anonymized": false,
+            "createdAt": "2026-09-12T20:59:35.917Z"
+          },
+          "extractions": [],
+          "criteriaMatches": [],
+          "suggestedQuestions": [],
+          "interviews": [
+            {
+              "id": "cmtyvc09z000uvy4zyejt23bj",
+              "applicationId": "cmtyvc06r000svy4zacfpklf2",
+              "slotDatetime": "2026-09-14T20:59:36.162Z",
+              "participants": [
+                "recruteur@example.com"
+              ],
+              "status": "DECLINED",
+              "calendarEventId": null,
+              "feedbackText": null,
+              "feedbackSubmittedAt": null,
+              "createdAt": "2026-09-12T20:59:36.167Z"
+            }
+          ],
+          "emailDrafts": [
+            {
+              "id": "cmtyvc0gc000wvy4zt20ywfzs",
+              "applicationId": "cmtyvc06r000svy4zacfpklf2",
+              "type": "FOLLOW_UP",
+              "draftText": "Bonjour Aïcha, suite à votre indisponibilité, pourriez-vous nous proposer un nouveau créneau ? L'équipe recrutement.",
+              "status": "PENDING_REVIEW",
+              "reviewedBy": null,
+              "sentAt": null,
+              "createdAt": "2026-09-12T20:59:36.396Z"
+            }
+          ]
+        },
+        {
+          "id": "cmtyvc0tn000zvy4z2zl7twjo",
+          "candidateId": "cmtyvc0n0000xvy4z0ts99d39",
+          "jobId": "cmtyvbxo90002vy4zd9xtwznj",
+          "stage": "SCREENING",
+          "ownerId": "cmtyc7w2000018n56bt3hjcyc",
+          "decisionReason": null,
+          "nameHidden": false,
+          "photoHidden": false,
+          "createdAt": "2026-09-12T20:59:36.875Z",
+          "updatedAt": "2026-09-12T20:59:36.875Z",
+          "extractionStatus": "SUCCESS",
+          "candidate": {
+            "id": "cmtyvc0n0000xvy4z0ts99d39",
+            "fullName": "Candidat supprimé",
+            "email": "deleted-demo-8c52d66d5feeecdfca2125fdd8370a1cb8e1dda996af823672fce8070706003f@anonymized.local",
+            "phone": null,
+            "cvUrl": "",
+            "portfolioUrl": null,
+            "consentGiven": true,
+            "consentDate": "2026-09-12T20:59:36.634Z",
+            "dedupeHash": "8c52d66d5feeecdfca2125fdd8370a1cb8e1dda996af823672fce8070706003f",
+            "deletionRequested": true,
+            "deletionRequestedAt": "2026-09-12T20:59:36.634Z",
+            "anonymized": true,
+            "createdAt": "2026-09-12T20:59:36.636Z"
+          },
+          "extractions": [],
+          "criteriaMatches": [],
+          "suggestedQuestions": [],
+          "interviews": [],
+          "emailDrafts": []
+        }
+      ]
+    }
+  ]
+}
