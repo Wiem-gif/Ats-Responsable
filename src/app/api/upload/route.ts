@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
 
     // --- 1. Dédoublonnage -------------------------------------------------
     const dedupeHash = computeDedupeHash(fullName, email);
-    const existing = await prisma.candidate.findFirst({ where: { dedupeHash } });
+    const existing = await prisma.candidate.findFirst({ where: { dedupeHash, anonymized: false } });
 
     if (existing) {
       // On ne fusionne jamais automatiquement : on notifie et on laisse
