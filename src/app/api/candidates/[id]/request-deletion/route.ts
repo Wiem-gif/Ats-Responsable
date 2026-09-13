@@ -8,15 +8,16 @@ import { getSessionFromRequest } from "@/lib/auth";
  * Exécute le droit à la suppression — même en cours de process de
  * recrutement (cas limite explicitement exigé par le sujet).
  *
- * Contrairement aux autres emails du produit, la confirmation de
- * suppression part immédiatement, sans validation humaine préalable :
- * il s'agit de l'exécution d'un droit légal du candidat, pas d'une
- * décision produit — la distinction est volontaire et documentée au README.
+ * Ouvert aux deux rôles (Admin et Recruteur) : le RGPD exige une exécution
+ * sans délai excessif, restreindre à l'Admin créerait un risque de
+ * non-conformité si le recruteur en contact avec le candidat ne peut pas
+ * agir. La protection vient de la traçabilité (actorId dans AuditLog),
+ * pas de la restriction d'accès.
  */
 export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
   const session = await getSessionFromRequest(req);
-  if (!session || session.role !== "ADMIN") {
-    return NextResponse.json({ error: "Réservé aux administrateurs." }, { status: 403 });
+  if (!session) {
+    return NextResponse.json({ error: "Authentification requise." }, { status: 401 });
   }
 
   try {
@@ -25,9 +26,6 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       return NextResponse.json({ error: "Candidat introuvable." }, { status: 404 });
     }
 
-    // Anonymisation plutôt que suppression physique immédiate : conserve
-    // l'intégrité des logs d'audit tout en retirant les données identifiantes.
-    // Suppression réelle du fichier sur S3, pas seulement de sa référence.
     await deleteCvFromS3(candidate.cvUrl).catch((err) =>
       console.error("Erreur suppression CV sur S3 (non bloquant) :", err)
     );
@@ -39,7 +37,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         email: `deleted-${candidate.id}@anonymized.local`,
         phone: null,
         portfolioUrl: null,
-        cvUrl: "", // retire la référence : le CV original ne doit plus être consultable
+        cvUrl: "",
         deletionRequested: true,
         deletionRequestedAt: new Date(),
         anonymized: true,
@@ -50,9 +48,6 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       where: { candidateId: params.id },
     });
 
-    // On efface aussi les données identifiantes extraites par l'IA (nom,
-    // email, téléphone...) — sinon l'anonymisation du candidat serait
-    // incomplète : ces informations resteraient visibles sur la fiche.
     for (const app of applications) {
       await prisma.extraction.deleteMany({ where: { applicationId: app.id } });
     }
@@ -64,7 +59,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
           type: "DELETION_CONFIRMATION",
           draftText:
             "Bonjour,\n\nConformément à votre demande, l'ensemble de vos données personnelles a été supprimé de notre système. Votre candidature ne sera plus traitée.\n\nL'équipe recrutement",
-          status: "SENT", // envoyé directement : exécution d'un droit, pas une décision produit
+          status: "SENT",
           sentAt: new Date(),
         },
       });
@@ -72,6 +67,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 
     await prisma.auditLog.create({
       data: {
+        actorId: session.userId,
         action: "candidate.deletion_executed",
         targetType: "Candidate",
         targetId: params.id,
