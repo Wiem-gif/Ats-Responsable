@@ -7,6 +7,7 @@ import ScheduleInterviewForm from "./schedule-interview-form";
 import DeleteCandidateButton from "./delete-candidate-button";
 import InterviewFeedbackAndDecision from "./interview-feedback-and-decision";
 import AuditTimeline from "./audit-timeline";
+import ManualExtractionForm from "./manual-extraction-form";
 
 export const dynamic = "force-dynamic";
 
@@ -108,9 +109,7 @@ export default async function CandidateDetailPage({ params }: { params: { id: st
           document source — corrigeable à tout moment si l&apos;IA s&apos;est trompée.
         </p>
         {application.extractions.length === 0 ? (
-          <p className="rounded-lg border border-dashed border-slate-300 p-4 text-sm text-slate-400">
-            Aucune extraction disponible pour le moment.
-          </p>
+          <ManualExtractionForm applicationId={application.id} />
         ) : (
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {application.extractions.map((ext) => (

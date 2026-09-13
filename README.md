@@ -12,7 +12,7 @@ Suivi de candidatures qui résume les CV avec l'IA et aide à préparer l'entret
 | Admin | `admin@example.com` | `admin123` |
 | Recruteur | `recruteur@example.com` | `recruteur123` |
 
-(l'écran de connexion propose aussi des boutons de remplissage automatique)
+
 
 ## Principes du projet
 
@@ -21,7 +21,17 @@ Suivi de candidatures qui résume les CV avec l'IA et aide à préparer l'entret
 - Toute extraction erronée peut être corrigée manuellement par le recruteur.
 - Aucun email ne part sans validation humaine explicite (page `/drafts`).
 - Un candidat peut demander la suppression de ses données à tout moment, même en cours de process.
-- Accès par rôle : la création de poste et la suppression RGPD sont réservées aux comptes **Admin**.
+- Si le CV ne peut être lu automatiquement (même après OCR), une saisie manuelle prend le relais —
+  et sert de base au rapprochement critères et aux questions suggérées.
+
+## Rôles et accès
+
+| Action | Admin | Recruteur | Justification |
+|---|---|---|---|
+| Traiter les candidatures (upload, entretiens, emails, décisions) | ✅ | ✅ | Travail quotidien |
+| Créer un poste | ✅ | ✅ | Action réversible, sans enjeu de conformité |
+| Exécuter une suppression RGPD | ✅ | ✅ | Le RGPD exige une exécution sans délai excessif ; restreindre à l'Admin créerait un risque de non-conformité si le recruteur en contact avec le candidat ne peut pas agir. La protection vient de la **traçabilité** (chaque suppression enregistre l'auteur dans `AuditLog`), pas de la restriction d'accès. |
+| Créer des comptes utilisateurs | ✅ | ❌ | Décision d'organisation, à dessein réservée |
 
 ## Stack technique
 
@@ -39,7 +49,7 @@ Suivi de candidatures qui résume les CV avec l'IA et aide à préparer l'entret
 ```bash
 npm install
 cp .env.example .env
-# renseigner les vraies valeurs dans .env (voir section Variables d'environnement)
+# renseigner les vraies valeurs dans .env
 
 npm run prisma:generate
 npm run prisma:migrate
@@ -52,81 +62,82 @@ L'app est disponible sur http://localhost:3000 — redirige automatiquement vers
 
 ## Variables d'environnement
 
-Voir `.env.example` pour la liste complète. Points d'attention :
+Voir `.env.example`. Points d'attention :
 
-- **`DATABASE_URL`** : utiliser l'URL du **pooler** Supabase (`pooler.supabase.com:6543`), pas la connexion directe — nécessaire pour fonctionner correctement sur un environnement serverless (Vercel).
-- **`AUTH_SECRET`** : chaîne aléatoire longue, sert à signer les sessions.
-- **`CRON_SECRET`** : protège les endpoints `/api/cron/*` appelés par n8n, pour empêcher un déclenchement public non autorisé.
-- **`GMAIL_USER` / `GMAIL_APP_PASSWORD`** : compte Gmail dédié (pas un compte personnel), avec un mot de passe d'application généré après activation de la validation en 2 étapes.
+- **`DATABASE_URL`** : utiliser l'URL du **pooler** Supabase (`pooler.supabase.com:6543`), pas la connexion directe — nécessaire pour un environnement serverless (Vercel).
+- **`AUTH_SECRET`** : chaîne aléatoire longue, signe les sessions.
+- **`CRON_SECRET`** : protège les endpoints `/api/cron/*` appelés par n8n.
+- **`GMAIL_USER` / `GMAIL_APP_PASSWORD`** : compte Gmail dédié, mot de passe d'application (validation en 2 étapes requise).
 
 ## Architecture des workflows
 
 ### W1 — Ingestion d'un CV
 ```
 Upload -> Stockage privé (Supabase Storage) -> Dédoublonnage (hash nom+email)
-       -> Extraction texte (unpdf, fallback OCR si nécessaire)
+       -> Extraction texte (unpdf, fallback OCR)
+       -> Si échec total : saisie manuelle par le recruteur (sert de base à l'IA ensuite)
        -> 3 appels IA séparés : extraction factuelle / critères / questions
        -> Passage automatique "Reçu" -> "Présélection"
 ```
-Exécuté **directement par l'application** (appel synchrone), plutôt que via n8n, pour garantir la fiabilité de la démo et éviter une dépendance réseau supplémentaire sur le chemin critique.
+Exécuté directement par l'application (appel synchrone), pour la fiabilité de la démo.
 
 ### W2 — Entretien
 ```
-Planification (recruteur) -> Brouillon d'invitation généré par IA -> Validation humaine (/drafts)
-Lien de refus inclus dans l'email -> page publique /public/interviews/[id]/decline (sans compte)
-n8n (Schedule Trigger, /api/cron/rappels) -> détecte les entretiens proches -> brouillon de rappel J-1
-Après l'entretien -> feedback saisi par le recruteur -> "Entretien fait"
+Planification -> Brouillon d'invitation (IA) -> Validation humaine (/drafts)
+Lien de refus inclus -> page publique /public/interviews/[id]/decline (sans compte)
+n8n (/api/cron/rappels) -> détecte les entretiens proches -> brouillon de rappel J-1
+Après l'entretien -> feedback du recruteur -> "Entretien fait"
 Décision finale (texte libre, jamais un score) -> "Décidé"
 ```
 
 ### W3 — Relance
 ```
-n8n (Schedule Trigger, /api/cron/relances) -> détecte les candidatures sans mise à jour depuis 5 jours
--> génère un brouillon de relance -> validation humaine avant envoi
+n8n (/api/cron/relances) -> candidatures sans mise à jour depuis 5 jours
+-> brouillon de relance -> validation humaine avant envoi
 ```
 
-**Pourquoi n8n orchestre le temporel mais pas la logique métier** : la logique IA reste versionnée et testable dans le code de l'application ; n8n se contente de déclencher ces endpoints à intervalle régulier via des appels HTTP protégés par `CRON_SECRET`. Ce découpage évite qu'un changement de logique métier nécessite de modifier un workflow n8n en plus du code.
+**n8n orchestre le temporel, jamais la logique métier** : les endpoints `/api/cron/*` contiennent toute la logique (versionnée, testable) ; n8n se contente de les déclencher à intervalle régulier via HTTP, protégé par `CRON_SECRET`.
 
 ### Suppression RGPD
 ```
-Demande (Admin uniquement) -> suppression réelle du CV sur le stockage
--> suppression des extractions IA liées (données identifiantes)
--> anonymisation du candidat (la ligne reste, pour l'intégrité des logs d'audit)
--> confirmation envoyée immédiatement (exécution d'un droit, pas une décision produit,
-   donc pas soumise à la même validation humaine que les autres emails)
+Demande (Admin ou Recruteur) -> suppression réelle du CV sur le stockage
+-> suppression des extractions IA liées -> anonymisation du candidat
+-> confirmation envoyée immédiatement (exécution d'un droit, pas une décision produit)
+-> action tracée avec l'identité de l'auteur dans AuditLog
 ```
 
 ## Cas limites gérés
 
 | Cas | Comportement |
 |---|---|
-| CV sans texte exploitable | Fallback OCR ; si échec aussi, statut `FAILED` visible, saisie manuelle proposée |
-| Candidat en doublon | Détection par hash nom+email ; jamais de fusion automatique, notification uniquement |
+| CV sans texte exploitable | Fallback OCR ; si échec aussi, saisie manuelle proposée sur la fiche candidat |
+| Candidat en doublon | Détection par hash nom+email ; jamais de fusion automatique |
 | Critère non présent | Affiché neutre (`NOT_FOUND`), jamais interprété négativement |
-| Invitation refusée | Lien public de refus -> notification email au recruteur + brouillon de relance généré |
-| Suppression pendant le process | Traitée à tout moment, quel que soit le stage de la candidature |
+| Invitation refusée | Lien public de refus -> notification email au recruteur + brouillon de relance |
+| Suppression pendant le process | Traitée à tout moment, quel que soit le stage |
 
 ## Choix techniques notables
 
-- **Authentification maison (jose + bcryptjs)** plutôt que NextAuth : librairies pures JS, compatibles Edge Runtime (middleware) sans compilation native — plus stable sur Windows en développement.
-- **Pas d'auto-inscription publique** : un outil de recrutement interne n'a pas vocation à laisser n'importe qui créer un compte. Seul un Admin crée des comptes Recruteur (`/admin/users`).
-- **Suppression RGPD par anonymisation plutôt que suppression physique** : préserve l'intégrité des journaux d'audit tout en rendant les données personnelles inaccessibles.
-- **3 appels IA séparés** (extraction / matching / questions) plutôt qu'un seul prompt monolithique : chaque responsabilité est isolée, testable et débogable indépendamment.
+- **Authentification maison (jose + bcryptjs)** plutôt que NextAuth : compatibles Edge Runtime sans compilation native.
+- **Pas d'auto-inscription publique** : seul un Admin crée des comptes (`/admin/users`).
+- **RGPD par anonymisation** plutôt que suppression physique : préserve l'intégrité des journaux d'audit.
+- **3 appels IA séparés** (extraction / matching / questions) : chaque responsabilité isolée et testable.
+- **Accès par rôle calibré sur le risque de l'action**, pas de façon uniforme : la suppression RGPD reste ouverte aux deux rôles opérationnels pour respecter les délais légaux, la gestion des comptes reste seule restreinte.
 
 ## Limites connues
 
-- La planification d'entretien enregistre une date/heure en base mais ne synchronise pas avec un calendrier externe (Google Calendar) — une vraie intégration nécessiterait OAuth2 et l'API Calendar, hors scope pour ce format d'exercice.
-- L'envoi d'email passe par un compte Gmail standard (limite de 500 emails/jour), suffisant pour une démo mais à remplacer par un service transactionnel dédié (Resend, SES) en production réelle.
-- Le lien de refus d'entretien utilise l'identifiant de l'entretien (peu prévisible mais non signé cryptographiquement) — une vraie mise en production ajouterait un token dédié à usage unique.
-- Pas de notes privées/partagées ni de grille d'entretien structurée dans la fiche candidat — les questions suggérées par l'IA en tiennent lieu de façon minimale.
-- Les tests automatisés ne sont pas inclus dans ce livrable, faute de temps sur le format 2 jours.
+- Pas de synchronisation avec un calendrier externe (Google Calendar) — date/heure stockées en base uniquement.
+- Envoi d'email via un compte Gmail standard (limite 500/jour) — à remplacer par un service transactionnel dédié en production réelle.
+- Le lien de refus d'entretien utilise l'identifiant de l'entretien, non signé cryptographiquement.
+- Pas de notes privées/partagées ni de grille d'entretien structurée.
+
 
 ## Exports
 
 ```bash
 npm run export:demo
 ```
-Génère `exports/demo-dataset.json` (jeu de données) et `exports/workflows.json` (description structurée des workflows).
+Génère `exports/demo-dataset.json` et `exports/workflows.json`.
 
 ## Structure du projet
 
@@ -135,21 +146,21 @@ src/
   middleware.ts              -> protection des routes par session
   lib/
     auth.ts                  -> session (jose), mots de passe (bcryptjs)
-    ai-extraction.ts         -> les 3 appels IA (extraction/matching/questions)
-    ingestion-pipeline.ts    -> orchestration du pipeline W1
+    ai-extraction.ts         -> les 3 appels IA
+    ingestion-pipeline.ts    -> orchestration W1
     email-drafts.ts          -> génération de brouillons via IA
     email-sender.ts          -> envoi réel (Nodemailer/Gmail)
     cv-parser.ts             -> extraction texte + fallback OCR + dédoublonnage
-    s3.ts                    -> stockage/suppression CV (Supabase Storage)
+    s3.ts                    -> stockage/suppression CV
   app/
-    login/, admin/users/     -> authentification et gestion des comptes
+    login/, admin/users/     -> authentification et comptes
     jobs/, candidates/       -> coeur du produit
     drafts/                  -> validation des emails
-    public/interviews/.../decline  -> page publique (sans compte)
+    public/interviews/.../decline  -> page publique
     api/cron/                -> endpoints déclenchés par n8n
 prisma/
-  schema.prisma              -> modèle de données complet
+  schema.prisma              -> modèle de données
   seed.ts                    -> jeu de données de démo
 scripts/
-  export-demo.ts             -> export JSON (livrable)
+  export-demo.ts             -> export JSON
 ```
